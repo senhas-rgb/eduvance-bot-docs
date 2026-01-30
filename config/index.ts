@@ -5,11 +5,11 @@ export default {
    */
   metadata: {
     title: {
-      default: 'Mantine Next.js and Nextra template',
-      template: '%s | Mantine Next.js and Nextra template',
+      default: 'Eduvance Docs',
+      template: '%s | Eduvance Docs',
     },
-    description: 'I am using Mantine with Next.js and Nextra!',
-    metadataBase: new URL('https://next-app-nextra-template.vercel.app/'),
+    description: 'The official documentation for Eduvance Discord bot',
+    metadataBase: new URL('https://eduvance-bot-docs-3brh9cx9m-senhasts-projects.vercel.app/'),
     keywords: [
       'Mantine',
       'Nextra',
@@ -19,6 +19,9 @@ export default {
       'MDX',
       'Markdown',
       'Static Site Generator',
+      'Documentation',
+      'Eduvance',
+      'Discord Bot',
     ],
     generator: 'Next.js',
     applicationName: 'Eduvance Docs',
