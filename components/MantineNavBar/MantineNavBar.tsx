@@ -27,8 +27,8 @@ export const MantineNavBar = () => {
           </Group>
         }
         // Mantine discord server
-        chatLink="https://discord.com/invite/wbH82zuWMN"
-        projectLink="https://github.com/gfazioli/next-app-nextra-template"
+        chatLink="https://discord.gg/YM3cdKuAKa"
+        projectLink="https://github.com/senhas-rgb/eduvance-bot-docs"
       >
         <>
           <ColorSchemeControl />

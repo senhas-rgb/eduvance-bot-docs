@@ -21,14 +21,14 @@ export default {
       'Static Site Generator',
     ],
     generator: 'Next.js',
-    applicationName: 'Mantine',
+    applicationName: 'Eduvance Docs',
     appleWebApp: {
-      title: 'Mantine',
+      title: 'Eduvance Docs',
     },
     openGraph: {
       // https://github.com/vercel/next.js/discussions/50189#discussioncomment-10826632
       url: './',
-      siteName: 'Mantine',
+      siteName: 'Eduvance Docs',
       locale: 'en_US',
       type: 'website',
     },
