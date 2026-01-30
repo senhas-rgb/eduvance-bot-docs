@@ -11,10 +11,4 @@ export default {
     type: 'separator',
     // title: 'My Items', // Title is optional
   },
-  versioning: {
-    theme: {
-      toc: false,
-    },
-  },
-  'release-notes': '',
 };
