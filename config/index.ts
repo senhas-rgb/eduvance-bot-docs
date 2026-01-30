@@ -47,7 +47,7 @@ export default {
    * Nextra Layout component configuration
    */
   nextraLayout: {
-    docsRepositoryBase: 'https://github.com/gfazioli/next-app-nextra-template/tree/main/app/docs/',
+    docsRepositoryBase: 'https://github.com/senhas-rgb/eduvance-bot-docs/tree/main/app/docs/',
     sidebar: {
       defaultMenuCollapseLevel: 1,
     },
@@ -71,7 +71,7 @@ export default {
    * This information is used to fetch the releases from the GitHub API.
    */
   gitHub: {
-    repo: 'gfazioli/next-app-nextra-template',
+    repo: 'senhas-rgb/eduvance-bot-docs',
     apiUrl: 'https://api.github.com',
     releasesUrl: 'https://api.github.com/repos/senhas-rgb/eduvance-bot-docs/releases',
   },
@@ -81,7 +81,7 @@ export default {
    * This is used to link the release notes in the app.
    */
   releaseNotes: {
-    url: 'https://github.com/gfazioli/next-app-nextra-template/releases',
+    url: 'https://github.com/senhas-rgb/eduvance-bot-docs/releases',
     maxReleases: 10,
   },
 

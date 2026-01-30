@@ -45,5 +45,5 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-  ]
+, "app/not-found.jsx"  ]
 }

@@ -11,7 +11,7 @@ export const Content = () => {
             size="xl"
             component="a"
             href=""
-            target="_blank"
+            target=""
           >
             Utility commands
           </Button>
@@ -19,7 +19,7 @@ export const Content = () => {
             size="xl"
             component="a"
             href=""
-            target="_blank"
+            target=""
           >
             Moderation
           </Button>
@@ -27,7 +27,7 @@ export const Content = () => {
             size="xl"
             component="a"
             href=""
-            target="_blank"
+            target=""
           >
             Educational resources
           </Button>
