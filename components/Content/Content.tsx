@@ -6,48 +6,6 @@ export const Content = () => {
   return (
     <>
       <Stack align="center" my={32}>
-        <Box lightHidden>
-          <Text
-            my={32}
-            fz={32}
-            ta="center"
-            variant="gradient"
-            gradient={{ from: 'yellow', to: 'violet' }}
-            style={{
-              textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
-            }}
-          >
-            You may use third-party components in your project
-          </Text>
-        </Box>
-        <Box darkHidden>
-          <Text
-            my={32}
-            fz={32}
-            ta="center"
-            variant="gradient"
-            gradient={{ from: 'red', to: 'yellow' }}
-            style={{
-              textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
-            }}
-          >
-            You may use third-party components in your project
-          </Text>
-        </Box>
-
-        <Anchor href="https://mantine-extensions.vercel.app/">
-          <Image
-            width={640}
-            height={500}
-            src="https://raw.githubusercontent.com/gfazioli/mantine-extensions-assets/main/meh/meh.png"
-            alt="Mantine Extensions Hub"
-          />
-        </Anchor>
-
-        <Anchor href="https://mantine-extensions.vercel.app/">
-          Visit the Mantine Extension Hub for more components
-        </Anchor>
-
         <Marquee fadeEdges pauseOnHover>
           <Button
             size="xl"

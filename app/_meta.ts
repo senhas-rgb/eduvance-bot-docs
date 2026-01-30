@@ -10,24 +10,10 @@ export default {
     title: 'Community',
     type: 'menu',
     items: {
-      blog: {
-        title: 'Blog',
-        href: 'https://undolog.com/',
-      },
-      medium: {
-        title: 'Medium',
-        href: 'https://medium.com/@giovambattista.fazioli',
-      },
+      Discord: {
+        title: 'Discord',
+        href: 'https://discord.gg/YM3cdKuAKa',
+      }
     },
-  },
-  about: {
-    type: 'page',
-    title: 'About',
-    href: 'https://github.com/gfazioli',
-  },
-  sponsor: {
-    type: 'page',
-    title: 'Sponsors',
-    href: 'https://github.com/sponsors/gfazioli?o=esb',
-  },
+  }
 };
