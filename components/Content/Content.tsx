@@ -10,42 +10,26 @@ export const Content = () => {
           <Button
             size="xl"
             component="a"
-            href="https://gfazioli.github.io/mantine-marquee/"
+            href=""
             target="_blank"
           >
-            Mantine Marquee
+            Utility commands
           </Button>
           <Button
             size="xl"
             component="a"
-            href="https://gfazioli.github.io/mantine-reflection/"
+            href=""
             target="_blank"
           >
-            Mantine Reflection
+            Moderation
           </Button>
           <Button
             size="xl"
             component="a"
-            href="https://gfazioli.github.io/mantine-split-pane/"
+            href=""
             target="_blank"
           >
-            Mantine Split Pane
-          </Button>
-          <Button
-            size="xl"
-            component="a"
-            href="https://gfazioli.github.io/mantine-spinner/"
-            target="_blank"
-          >
-            Mantine Spinner
-          </Button>
-          <Button
-            size="xl"
-            component="a"
-            href="https://gfazioli.github.io/mantine-parallax/"
-            target="_blank"
-          >
-            Mantine Parallax
+            Educational resources
           </Button>
         </Marquee>
 
