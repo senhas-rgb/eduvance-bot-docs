@@ -1,8 +1,14 @@
-import { IconBrandMantine } from '@tabler/icons-react';
-import { useMantineTheme } from '@mantine/core';
+import Image from 'next/image';
+import logoImg from './logo.jpg';
 
 export function Logo() {
-  const theme = useMantineTheme();
-
-  return <IconBrandMantine size={48} color={theme.colors.blue[5]} />;
+  return (
+    <Image
+      src={logoImg}
+      alt="Logo"
+      width={48}
+      height={48}
+      style={{ borderRadius: '16px' }}
+    />
+  );
 }
