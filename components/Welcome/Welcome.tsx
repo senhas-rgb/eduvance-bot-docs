@@ -11,7 +11,6 @@ export function Welcome() {
   return (
     <>
       <Center my={64}>
-        <ProductHunt />
       </Center>
       <Title maw="90vw" mx="auto" className={classes.title} ta="center">
         <span style={{ fontSize: '110px' }}>Eduvance</span>
