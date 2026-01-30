@@ -7,11 +7,6 @@ export function ColorSchemeToggle() {
   const { setColorScheme } = useMantineColorScheme();
   const { setTheme } = useTheme();
 
-  /**
-   * You might improve this component. Anyway, it's a good starting point.
-   * As you can see we have to handle both the Mantine and Nextra dark mode.
-   */
-
   return (
     <Group justify="center" mt="xl">
       <Button

@@ -35,9 +35,6 @@ export default {
     other: {
       'msapplication-TileColor': '#fff',
     },
-    twitter: {
-      site: 'https://next-app-nextra-template.vercel.app/',
-    },
     alternates: {
       // https://github.com/vercel/next.js/discussions/50189#discussioncomment-10826632
       canonical: './',
@@ -73,7 +70,7 @@ export default {
   gitHub: {
     repo: 'gfazioli/next-app-nextra-template',
     apiUrl: 'https://api.github.com',
-    releasesUrl: 'https://api.github.com/repos/gfazioli/next-app-nextra-template/releases',
+    releasesUrl: 'https://api.github.com/repos/senhas-rgb/eduvance-bot-docs/releases',
   },
 
   /**
