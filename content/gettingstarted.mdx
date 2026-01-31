@@ -1,0 +1,54 @@
+import { Callout } from 'nextra/components'
+
+# 2. Getting Started
+
+Eduvance Bot is designed for academic / community servers that need structured moderation, reputation tracking, and easy access to Edexcel past papers.
+The bot uses Discord slash commands for all actions, logs all key events, and stores moderation and warning data in a database for long-term tracking.
+
+## 2.1 Initial Setup `/setup` 
+
+> [!NOTE]
+>
+> Purpose: Interactive wizard that walks you through: creating/choosing a moderator role, selecting log channels, enabling the Braincells system, and configuring milestone roles.​
+
+> [!IMPORTANT]
+>
+> This command is only available to the server owner.
+
+```discord filename="Discord" copy
+/setup
+```
+
+> [!TIP]
+>
+> Make sure you already have a seperate moderation role for the server before running `/setup`.
+
+## How to use the command
+
+import { Steps } from 'nextra/components'
+
+<Steps>
+
+### Run `/setup` as server owner
+
+```discord filename="Discord" copy
+/setup
+```
+
+### Follow the interactive prompts to pick:
+
+- Moderation role (e.g. @Mod)
+- Main moderation log channel
+- Reputation log channel (for Braincells)
+- Whether to enable Braincells
+- Any milestone roles
+
+### At the end the bot shows a summary of the configuration.
+
+</Steps>
+
+## 2.2 Next Steps
+
+- Run `/config` to review or fine-tune all settings.​
+- Use `/togglerep` if you want to temporarily disable the Braincells reputation system.​
+

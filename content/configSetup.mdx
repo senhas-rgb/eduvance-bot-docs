@@ -1,0 +1,87 @@
+import { Button, Center, Paper } from '@mantine/core';
+
+# 3. Configuration and Setup
+The commands control mod role, logging, and core server settings.
+
+--- 
+
+
+## 3.1 `/config`
+
+Configure or view server-specific settings.
+
+
+> [!IMPORTANT]
+>
+> This command is only available to the server owner/administrator.
+
+
+```discord filename="Discord" copy
+/config <settings> [value]
+```
+
+### Behavior
+
+- Shows current configuration (mod role ID, log channel, transcript channel, prefix, welcome channel/message, auto-role, rep log channel, rep enabled, milestone roles).
+- Allows updates where supported (with validation and confirmation).
+
+### Error handling
+Validates setting, value, permissions, applies changes, and logs config changes.
+
+---
+
+## 3.2 `/setlogchannel`
+
+Set the main moderation log channel.
+
+> [!IMPORTANT]
+>
+> This command is only available to the server owner/administrator.
+
+```discord filename="Discord" copy
+/setlogchannel <channel>
+```
+
+### Behavior
+
+- Validates the channel, saves it as the log channel, confirms success.
+
+### Error handling
+Channel validation, permission check, configuration write.
+
+---
+
+## 3.3 `/setmodrole`
+
+Set which role counts as “moderator staff”.
+
+> [!IMPORTANT]
+> 
+> This command is only available to the server owner/administrator.
+
+```discord filename="Discord" copy
+/setmodrole <role>
+```
+
+### Behavior
+
+- Validates the role, saves it as the mod role used to gate staff commands.
+
+## Error handling
+Role validation, permission check, configuration write
+
+---
+
+## 3.4 `/togglerep`
+Enable or disable the Braincells reputation system server-wide.​
+
+> [!IMPORTANT]
+>
+> (treated as staff / config-level in practice).
+
+```discord filename="Discord" copy
+/togglerep
+```
+
+### Behavior
+Flips the “rep enabled” flag in the config and confirms the new state.
