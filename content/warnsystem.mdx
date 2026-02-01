@@ -1,0 +1,139 @@
+# 5. Warning System
+
+The warning system escalates from standard warnings to final warnings and is fully stored in the database.
+
+---
+
+## 5.1 `/warn`
+
+Issue a standard warning to a member.
+
+> [!IMPORTANT]
+>
+> This command requires the `MODERATE_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/warn <member> <reason>
+```
+
+#### Behavior
+
+- Generates a unique warning ID
+- Records the warning in the `warnings` table with guild ID, user ID, moderator ID, reason, timestamp
+- Checks for any final warning on the member
+- DMs the user with reason and warning ID, and logs the warning
+
+> [!NOTE]
+>
+> All warnings are stored in the database and can be viewed using `/warnings` or `/modlog`.
+
+---
+
+## 5.2 `/warnings`
+
+View a member's full warning history.
+
+> [!IMPORTANT]
+>
+> This command requires the `MODERATE_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/warnings <member>
+```
+
+#### Behavior
+
+- Fetches all warnings for the member from the database
+- Presents them in a paginated embed with ID, reason, moderator, date, and status
+
+---
+
+## 5.3 `/clearwarning`
+
+Clear a specific warning from a member's record.
+
+> [!IMPORTANT]
+>
+> This command requires the `MODERATE_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/clearwarning <member> <warning_id>
+```
+
+#### Behavior
+
+- Validates warning ID and permissions
+- Updates the row to `status = 'cleared'`, sets `cleared_by` and `cleared_at`
+- Logs a "warning cleared" action and confirms in-channel
+
+> [!TIP]
+>
+> Use this when a warning was issued incorrectly or after a successful appeal.
+
+---
+
+## 5.4 `/finalwarning`
+
+Issue a final warning with special handling and stronger consequences.
+
+> [!IMPORTANT]
+>
+> This command requires the `MODERATE_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/finalwarning <member> <reason>
+```
+
+#### Behavior
+
+- Checks for an existing final warning on the member
+- Inserts a row into `final_warnings` with guild, user, moderator, reason, timestamp
+- DMs the user describing that this is a last step before removal, and logs the action
+
+> [!WARNING]
+>
+> Members with a final warning may face immediate bans for further violations. Use this command carefully.
+
+---
+
+## 5.5 `/checkfinalwarning`
+
+Shows if the member has an active final warning, including ID, reason, moderator, and date in a formatted embed, with optional action buttons.
+
+> [!IMPORTANT]
+>
+> This command requires the `MODERATE_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/checkfinalwarning <member>
+```
+
+#### Behavior
+
+- Checks the database for an active final warning
+- Displays detailed information in a formatted embed
+- Provides action buttons for quick follow-up actions
+
+---
+
+## 5.6 `/removefinalwarning`
+
+Clears an existing final warning (used post-appeal or behavior improvement).
+
+> [!IMPORTANT]
+>
+> This command requires the `MODERATE_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/removefinalwarning [user]
+```
+
+#### Behavior
+
+- Removes the active final warning from the member's record
+- Logs the removal action
+- Confirms the action in-channel
+
+> [!TIP]
+>
+> Use this after a successful appeal or when a member has shown significant improvement in behavior.

@@ -1,0 +1,118 @@
+# 8. Braincells Reputation System
+
+Braincells is the built-in reputation system for rewarding helpful members.
+
+---
+
+## 8.1 Viewing Reputation
+
+### `/rep`
+
+Show Braincells profile for a member.
+
+```discord filename="Discord" copy
+/rep [member]
+```
+
+> [!NOTE]
+>
+> This command is available to all members. Defaults to your own profile if no member is specified.
+
+#### Behavior
+
+- Shows current Braincells, total given, recent transactions, and user ID
+
+---
+
+### `/repleaderboard`
+
+Show the Braincells leaderboard for the server.
+
+```discord filename="Discord" copy
+/repleaderboard
+```
+
+> [!NOTE]
+>
+> This command is available to all members.
+
+#### Behavior
+
+- Lists top users by Braincells, includes your own rank
+- Supports options like `sort_by` and `limit`
+
+> [!TIP]
+>
+> Promote the leaderboard to encourage positive behavior and engagement in your server.
+
+---
+
+## 8.2 Managing Reputation
+
+### `/giverep`
+
+Member-to-member +1 Braincell.
+
+```discord filename="Discord" copy
+/giverep [member]
+```
+
+> [!NOTE]
+>
+> This command is available to all members.
+
+#### Behavior
+
+- Adds 1 Braincell to the target
+- Records the transaction
+- May log to a rep log channel if configured
+
+> [!TIP]
+>
+> Encourage members to use this command to reward helpful behavior and contributions.
+
+---
+
+### `/repmodify`
+
+Staff-only manual adjustments.
+
+> [!IMPORTANT]
+>
+> This command requires moderator permissions.
+
+```discord filename="Discord" copy
+/repmodify [user] [amount]
+```
+
+#### Behavior
+
+- Adds or subtracts Braincells (for corrections, events, or rewards)
+- Logs the modification to the rep log channel if configured
+
+> [!WARNING]
+>
+> Use this command carefully. Manual adjustments should be used for corrections, special events, or rewards only.
+
+---
+
+### `/togglerep`
+
+Globally enables/disables Braincells.
+
+> [!IMPORTANT]
+>
+> This command requires administrator permissions.
+
+```discord filename="Discord" copy
+/togglerep
+```
+
+#### Behavior
+
+- Flips the "rep enabled" flag in the config
+- Confirms the new state
+
+> [!NOTE]
+>
+> See the [Configuration and Setup](/configSetup) section for more details on this command.

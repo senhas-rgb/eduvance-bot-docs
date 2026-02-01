@@ -1,0 +1,99 @@
+# 6. Punishment System
+
+Punishments are guided by a violation matrix and integrate with warnings/final warnings.
+
+---
+
+## 6.1 `/punish`
+
+Apply a punishment based on violation category and history, with AI-assisted suggestions.
+
+> [!IMPORTANT]
+>
+> This command requires the `MODERATE_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/punish <member> <offense>
+```
+
+#### Violation Categories
+
+**Minor:**
+- Abuse of voice channels
+- Non-bot advertising
+- Disrespecting members
+- Self-promo
+- Swearing
+- Spamming
+- Trolling
+- Non-English
+
+**Moderate:**
+- Disrespecting staff
+- DM advertising
+- Encouraging rule breaking
+- Staff ping abuse
+- Ticket abuse
+- Inappropriate behavior
+
+**Serious:**
+- Bot-like advertising
+- DM offenses
+- Doxxing
+- Harassment
+- Piracy
+- Racial slurs
+- Scamming
+- Sensitive topics
+- Threats
+- Selling services
+
+#### Punishment Matrix
+
+**Minor:**
+- Level C: Warning → 60 min timeout
+- Level B: 1–12 hours timeout
+- Level A: 12 hours–1 day timeout
+
+**Moderate:**
+- Level C: 1–2 days timeout
+- Level B: 2–3 days timeout
+- Level A: 3–5 days timeout
+
+**Serious:**
+- Level C: 5 days timeout → permanent ban
+- Level B: 7 days timeout → permanent ban
+- Level A: permanent ban
+
+#### Behavior
+
+- Determines violation level, checks member's previous violations
+- Presents interactive punishment-selection UI (min to max range)
+- Applies chosen punishment, logs details, and has special handling if the user has a final warning
+
+> [!NOTE]
+>
+> The punishment system automatically escalates based on the member's violation history. Members with final warnings may face immediate bans.
+
+---
+
+## 6.2 `/punishments`
+
+Display a member's full punishment history.
+
+> [!IMPORTANT]
+>
+> This command requires the `MODERATE_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/punishments <member>
+```
+
+#### Behavior
+
+- Paginates through punishments (type, duration, reason, moderator, date)
+- Shows a comprehensive history of all applied punishments
+
+> [!TIP]
+>
+> Use this command to review a member's punishment history before applying new punishments to ensure appropriate escalation.

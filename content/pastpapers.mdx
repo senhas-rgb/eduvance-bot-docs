@@ -1,0 +1,65 @@
+# 9. Educational Resources (Edexcel Past Papers)
+
+Search and access Edexcel past papers directly from Discord.
+
+---
+
+## 9.1 `/pastpaper`
+
+Search Edexcel past papers by subject, year, and series, returning direct links.
+
+```discord filename="Discord" copy
+/pastpaper <subject> <year> <exam_series>
+```
+
+> [!NOTE]
+>
+> This command is available to all members.
+
+#### Parameters
+
+- `subject` – e.g. Accounting, Biology, Business, Chemistry, Economics, English Language, IT, Mathematics, Physics, Psychology, etc.
+- `year` – typically 2019–2025
+- `exam_series` – January, June, or October
+
+#### Behavior
+
+- Validates parameters, builds a query, fetches results
+- Shows a formatted embed with direct links to past papers
+
+> [!TIP]
+>
+> Promote this command in student channels so members can quickly fetch Edexcel papers for revision.
+
+---
+
+### Supported Subjects
+
+The bot supports a wide range of Edexcel subjects including:
+
+- Accounting
+- Biology
+- Business
+- Chemistry
+- Economics
+- English Language
+- Information Technology (IT)
+- Mathematics
+- Physics
+- Psychology
+
+And many more. Use the command's autocomplete feature to see all available subjects.
+
+---
+
+### Exam Series
+
+Edexcel exams are typically held in three series per year:
+
+- **January** – Winter series
+- **June** – Summer series
+- **October** – Autumn series
+
+> [!NOTE]
+>
+> Not all subjects are available in all series. The bot will show available papers for your selected parameters.

@@ -9,8 +9,9 @@ import { MantineNextraThemeObserver } from '../MantineNextraThemeObserver/Mantin
 export const MantineNavBar = () => {
   return (
     <>
-      <MantineNextraThemeObserver />
+      <MantineNextraThemeObserver key="theme-observer" />
       <Navbar
+        key="navbar"
         logo={
           <Group align="center" gap={4}>
             <Logo />
@@ -23,9 +24,7 @@ export const MantineNavBar = () => {
         chatLink="https://discord.gg/YM3cdKuAKa"
         projectLink="https://github.com/senhas-rgb/eduvance-bot-docs"
       >
-        <>
-          <ColorSchemeControl />
-        </>
+        <ColorSchemeControl key="color-scheme-control" />
       </Navbar>
     </>
   );

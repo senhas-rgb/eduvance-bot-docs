@@ -1,0 +1,59 @@
+# 11. Owner-Only Commands
+
+These commands are locked to the bot owner and control global usage.
+
+> [!WARNING]
+>
+> These commands are only available to the bot owner and cannot be used by server administrators.
+
+---
+
+## 11.1 `/block`
+
+Blocks a server from using Eduvance; no further commands work there.
+
+```discord filename="Discord" copy
+/block [server_id]
+```
+
+#### Behavior
+
+- Blocks the specified server from using any bot commands
+- All commands will be disabled for that server
+- Useful for managing problematic servers or enforcing terms of service
+
+---
+
+## 11.2 `/blocked`
+
+Lists all blocked servers for auditing.
+
+```discord filename="Discord" copy
+/blocked
+```
+
+#### Behavior
+
+- Displays a list of all currently blocked servers
+- Shows server IDs and timestamps
+- Useful for auditing and managing blocked servers
+
+---
+
+## 11.3 `/leaveserver`
+
+Forces the bot to leave a specified server.
+
+```discord filename="Discord" copy
+/leaveserver [server_id]
+```
+
+#### Behavior
+
+- Forces the bot to leave the specified server
+- All server data may be retained or deleted based on bot configuration
+- Use this when a server requests removal or for maintenance purposes
+
+> [!WARNING]
+>
+> This action cannot be easily undone. Make sure you want to remove the bot from the server before using this command.

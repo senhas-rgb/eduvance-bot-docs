@@ -1,0 +1,105 @@
+# 12. Logging System
+
+Eduvance automatically logs important events to your configured log channels.
+
+---
+
+## Overview
+
+The logging system ensures transparency and accountability for all moderation actions and important events in your server.
+
+---
+
+## What Gets Logged
+
+### Moderation Actions
+
+All moderation actions are logged to the main moderation log channel:
+
+- **Bans** – with reason, moderator, timestamp, and message deletion info
+- **Unbans** – with reason, moderator, and timestamp
+- **Kicks** – with reason, moderator, and timestamp
+- **Warnings** – with warning ID, reason, moderator, and timestamp
+- **Final Warnings** – with detailed information and consequences
+- **Timeouts** – with duration, reason, moderator, and timestamp
+- **Punishments** – with violation type, punishment applied, and full details
+- **Channel Actions** – locks, unlocks, slowmode changes, and bulk deletions
+
+### Reputation Changes
+
+When a rep log channel is configured, the following are logged:
+
+- **Reputation Given** – member-to-member rep transactions
+- **Reputation Modified** – staff manual adjustments with reason
+
+### Configuration Changes
+
+All configuration changes made via setup/config commands are logged:
+
+- Mod role changes
+- Log channel updates
+- Reputation system toggles
+- Milestone role configurations
+
+---
+
+## Setting Up Logging
+
+### Main Moderation Log Channel
+
+Set the main moderation log channel using:
+
+```discord filename="Discord" copy
+/setlogchannel <channel>
+```
+
+> [!IMPORTANT]
+>
+> This command requires administrator permissions.
+
+> [!TIP]
+>
+> Set your log channel first so every action is tracked from day one.
+
+### Reputation Log Channel
+
+Configure the reputation log channel during `/setup` or via `/config`:
+
+- Used specifically for Braincells reputation transactions
+- Can be the same as the main log channel or a separate channel
+- Helps track community engagement and positive behavior
+
+---
+
+## Log Format
+
+Logs include comprehensive information:
+
+- **Action Type** – what happened (ban, warn, etc.)
+- **Target User** – who was affected
+- **Moderator** – who performed the action
+- **Reason** – why the action was taken
+- **Timestamp** – when it occurred
+- **Additional Context** – relevant details (duration, warning ID, etc.)
+
+---
+
+## Best Practices
+
+1. **Set up logging immediately** – Configure your log channels during initial setup
+2. **Use separate channels** – Consider separate channels for moderation and reputation logs
+3. **Review regularly** – Check logs periodically to understand server activity patterns
+4. **Protect log channels** – Restrict access to log channels to trusted staff members
+5. **Archive logs** – Consider using Discord's built-in logging or external tools for long-term storage
+
+---
+
+## Example Log Channels
+
+- **Moderation Log:** `#mod-logs` – All moderation actions
+- **Reputation Log:** `#rep-logs` – Braincells transactions
+- **General Log:** `#server-logs` – Combined logging (if preferred)
+
+> [!NOTE]
+>
+> You can use the same channel for both moderation and reputation logs if you prefer a single unified log.

@@ -38,10 +38,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body>
         <MantineProvider theme={theme} defaultColorScheme={head.mantine.defaultColorScheme}>
           <Layout
-            navbar={<MantineNavBar />}
+            navbar={<MantineNavBar key="navbar" />}
             pageMap={pageMap}
             docsRepositoryBase={nextraLayout.docsRepositoryBase}
-            footer={<MantineFooter />}
+            footer={<MantineFooter key="footer" />}
             sidebar={nextraLayout.sidebar}
           >
             {children}

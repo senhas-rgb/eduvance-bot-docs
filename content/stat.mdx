@@ -1,0 +1,76 @@
+# 7. Statistics and History
+
+View detailed moderation history and server statistics.
+
+---
+
+## 7.1 `/modlog`
+
+Show a full moderation history for a specific user.
+
+> [!IMPORTANT]
+>
+> This command requires the `MODERATE_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/modlog <member>
+```
+
+#### Behavior
+
+Builds an interactive multi-tab view from database:
+
+- **Warnings tab** – IDs, reasons, timestamps
+- **Violations tab** – violation list, levels, punishments
+- **Summary tab** – warning count, violation count, final warning status
+
+> [!TIP]
+>
+> Use this command to get a comprehensive overview of a member's moderation history before making decisions.
+
+---
+
+## 7.2 `/statistics`
+
+Server-level statistics and moderation insights.
+
+```discord filename="Discord" copy
+/statistics
+```
+
+> [!NOTE]
+>
+> This command is available to all members.
+
+#### Behavior
+
+- **Member stats:** total, active, role distribution
+- **Channel stats:** total channels, types, activity
+- **Role information:** count, hierarchy, key permissions
+- **Moderation stats:** warning count, violation count, active punishments
+
+---
+
+## 7.3 `/userinfo`
+
+Detailed user profile and permission view.
+
+```discord filename="Discord" copy
+/userinfo [member]
+```
+
+> [!NOTE]
+>
+> This command is available to all members. Defaults to your own profile if no member is specified.
+
+#### Behavior
+
+- **Basic info:** username, tag, user ID
+- **Account info:** type, creation date, join date, flags
+- **Server info:** nickname, roles, top role
+- **Key permissions:** admin, ban/kick, manage messages/channels/roles/webhooks/emojis/threads
+- Uses an interactive embed with navigation
+
+> [!TIP]
+>
+> Use this command to quickly check a member's roles and permissions, especially useful for troubleshooting permission issues.

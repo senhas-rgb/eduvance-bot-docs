@@ -1,3 +1,223 @@
 # 4. Moderation Commands
 
 Basic member actions, timeouts, and channel controls are all logged to the configured log channel.
+
+---
+
+## 4.1 Member Actions
+
+### `/ban`
+
+Ban a member, with optional message deletion and detailed logging.
+
+> [!IMPORTANT]
+>
+> This command requires the `BAN_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/ban <member> [reason] [delete_messages]
+```
+
+#### Parameters
+
+- `member` (required) – member to ban
+- `reason` (optional, defaults to "No reason provided")
+- `delete_messages` (optional, 0–7 days of messages to delete)
+
+#### Behavior
+
+- Checks moderator permissions and target status, including final-warning state
+- Optionally deletes past messages for `delete_messages` days
+- Sends the user a DM with reason, then bans them
+- Logs to the log channel with moderator, reason, timestamp, and deletion info
+
+#### Error handling
+
+Missing permissions, invalid member, DM failures, message-delete errors, missing log channel.
+
+---
+
+### `/unban`
+
+Remove an existing ban with logging and confirmation.
+
+> [!IMPORTANT]
+>
+> This command requires the `BAN_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/unban <user_id> [reason]
+```
+
+#### Behavior
+
+- Accepts user ID or mention
+- Validates that the user is actually banned
+- Unbans and logs the action with moderator, reason, timestamp; replies with a confirmation embed
+
+---
+
+### `/kick`
+
+Kick a member without banning them, with logging and optional DM.
+
+> [!IMPORTANT]
+>
+> This command requires the `KICK_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/kick <member> [reason]
+```
+
+#### Behavior
+
+- Checks permissions and member status
+- Attempts to DM the member with the reason, kicks them, and logs the action
+
+---
+
+## 4.2 Timeout Controls
+
+### `/timeout`
+
+Temporarily restrict a member from interacting in the server.
+
+> [!IMPORTANT]
+>
+> This command requires the `MODERATE_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/timeout <member> <duration> <reason>
+```
+
+#### Duration Formats
+
+- Short: `1h`, `30m`, `1d`
+- Long: `1 hour`, `30 minutes`, `1 day`
+- Maximum: 6 hours (21600 seconds)
+
+#### Behavior
+
+- Validates permissions and duration format
+- Applies the timeout and DMs the user with reason and duration
+- Logs moderator, reason, duration, and timestamp
+- Tracks timeouts and removes them automatically when they expire
+
+---
+
+### `/untimeout`
+
+Removes an active timeout, restoring messaging permissions.
+
+> [!IMPORTANT]
+>
+> This command requires the `MODERATE_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/untimeout [user]
+```
+
+#### Behavior
+
+- Removes the active timeout from the specified user
+- Restores normal messaging permissions
+- Logs the action to the moderation log channel
+
+---
+
+### `/timeouts`
+
+Shows timeout history for a member, highlighting repeated issues.
+
+> [!IMPORTANT]
+>
+> This command requires the `MODERATE_MEMBERS` permission.
+
+```discord filename="Discord" copy
+/timeouts [user]
+```
+
+#### Behavior
+
+- Displays a paginated list of all timeouts for the member
+- Shows duration, reason, moderator, and timestamp for each timeout
+- Highlights patterns of repeated timeouts
+
+---
+
+## 4.3 Channel Management
+
+### `/clear`
+
+Bulk delete recent messages.
+
+> [!IMPORTANT]
+>
+> This command requires the `MANAGE_MESSAGES` permission.
+
+```discord filename="Discord" copy
+/clear <amount> [channel]
+```
+
+#### Behavior
+
+- Validates `amount` (1–100), optional channel (defaults to current)
+- Deletes messages, confirms, and logs the action
+
+---
+
+### `/lock`
+
+Lock a channel so members cannot send new messages.
+
+> [!IMPORTANT]
+>
+> This command requires the `MANAGE_CHANNELS` permission.
+
+```discord filename="Discord" copy
+/lock [channel] [reason]
+```
+
+#### Behavior
+
+- Validates channel, applies permission overwrites to lock
+- Confirms the action and logs it to the moderation log channel
+
+---
+
+### `/unlock`
+
+Remove a previous lock and restore normal messaging.
+
+> [!IMPORTANT]
+>
+> This command requires the `MANAGE_CHANNELS` permission.
+
+```discord filename="Discord" copy
+/unlock [channel] [reason]
+```
+
+#### Behavior
+
+- Validates channel, restores permissions
+- Confirms the action and logs it to the moderation log channel
+
+---
+
+### `/slowmode`
+
+Set slowmode for a channel, limiting message frequency.
+
+> [!IMPORTANT]
+>
+> This command requires the `MANAGE_CHANNELS` permission.
+
+```discord filename="Discord" copy
+/slowmode <seconds> [channel] [reason]
+```
+
+#### Behavior
+
+- `seconds` is 0 (disable) to 21600 (6 hours)
+- Validates seconds/channel, applies slowmode
+- Confirms the action and logs it to the moderation log channel
